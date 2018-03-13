@@ -1,0 +1,3 @@
+rootProject.name = 'GoGreen'
+
+include ':app'
