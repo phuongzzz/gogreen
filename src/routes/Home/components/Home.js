@@ -2,12 +2,18 @@ import React from "react";
 import {View, Text} from "react-native";
 
 import { Container }  from "native-base";
+import { StatusBar }  from "react-native";
 
 import MapContainer from "./MapContainer";
+import HeaderComponent from "../../../components/HeaderComponent";
+import FooterComponent from "../../../components/FooterComponent";
+
+const logo = require("../../../assets/img/logo.png");
 
 class Home extends React.Component{
 
   componentDidMount() {
+    StatusBar.setHidden(true);
     this.props.getCurrentLocation();
   }
 
@@ -20,9 +26,11 @@ class Home extends React.Component{
     }
     return(
       <Container>
+        <HeaderComponent logo={logo}/>
         {this.props.region.latitude &&
             <MapContainer region={this.props.region}/>
         }
+        <FooterComponent />
       </Container>
 
     );
