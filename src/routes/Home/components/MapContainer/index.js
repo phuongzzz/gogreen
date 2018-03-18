@@ -2,11 +2,14 @@ import React from "react";
 import { View } from "native-base";
 import MapView from "react-native-maps";
 
+import SearchBox from "../SearchBox";
+
 import styles from "./MapContainerStyles.js";
 
 export const MapContainer = ({region})=>{
 
 	return(
+    // provider={MapView.PROVIDER_GOOGLE}
 		<View style={styles.container}>
 			<MapView
 				style={styles.map}
@@ -18,6 +21,7 @@ export const MapContainer = ({region})=>{
 
 				/>
 			</MapView>
+      <SearchBox/>
 		</View>
 	)
 }
